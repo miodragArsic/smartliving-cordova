@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="app">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Smartliving APPrentice</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    
+    <link rel="stylesheet" href="bower_components/ratchet/css/ratchet.css">
+</head>
+
+<body>
+    <div ng-view></div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="bower_components/ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="signin/signin.controller.js"></script>
+    <script type="text/javascript" src="signup/signup.controller.js"></script>
+    <script type="text/javascript" src='home/home.controller.js'></script>
+    <script type="text/javascript" src="components/configuration.js"></script>
+    <script type="text/javascript" src="components/api_components/signin.service.js"></script>
+</body>
+
+</html>
