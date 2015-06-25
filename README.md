@@ -26,9 +26,14 @@ This is the Smartliving APPrentice aplication build in Cordova framework
 
 	**NOTE:** you will need to install appropriate SDK-s
 
-4. Put contents of this repository in **www** folder of your Cordova Project
+4. Install basic plugins (make sure you are in **smartliving-cordova** folder)
+	
+    `cordova plugin add org.apache.cordova.device`
+    `cordova plugin add org.apache.cordova.console` 
 
-5. Run Cordova project with emulator 
+5. Put contents of this repository in **www** folder of your Cordova Project
+
+6. Run Cordova project with emulator 
 
 	`cordova emulate ios`
 
