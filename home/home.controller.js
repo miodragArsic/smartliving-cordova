@@ -23,6 +23,8 @@ function HomeController($location) {
 
     /////////////////////////////////////
 
+    
+
     function signout() {
         $location.path('signin');
     }

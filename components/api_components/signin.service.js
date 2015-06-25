@@ -4,13 +4,9 @@ angular.module('app')
 
 .factory('SignInService', SignInService);
 
-SignInService.$inject = ['apiUrl', '$http'];
+SignInService.$inject = ['SmartlivingAuthorization'];
 
-function SignInService(apiUrl, $http) {
-
-    var headers = {
-        'Content-Type': 'application/x-www-form-urlencoded'
-    };
+function SignInService(SmartLivingAuthorization) {
 
     var service = {
         login: login,
@@ -22,16 +18,17 @@ function SignInService(apiUrl, $http) {
     ////////////////////////////////
 
     function login(loginData) {
-    	var apiClientId = 'webSiteAppLocal';
-    	 var data = 'grant_type=password&username=' + encodeURIComponent(loginData.username) + '&password=' + encodeURIComponent(loginData.password) + '&client_id=' + apiClientId;
+        // var data = 'grant_type=password&username=' + encodeURIComponent(loginData.username) + '&password=' + encodeURIComponent(loginData.password) + '&client_id=' + clientId;
 
-            return $http.post(apiUrl + 'login', data, {
-                headers: headers
-            }).then(onSuccessfullLogin);
+        //       return $http.post(apiUrl + 'login', data, {
+        //           headers: headers
+        //       }).then(onSuccessfullLogin);
+        return SmartLivingAuthorization.login(loginData)
+            .then(onSuccessfullLogin);
     }
 
-    function onSuccessfullLogin(response){
-    	return response.data;
+    function onSuccessfullLogin(response) {
+        return response.data;
     };
 
     function logout() {
