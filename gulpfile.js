@@ -17,18 +17,19 @@ var paths = {
         'bower_components/angular/angular.js',
         'bower_components/angular-loader/angular-loader.js',
         'bower_components/angular-route/angular-route.js',
-        'bower_components/ui-router/release/angular-ui-router.js'
+        'bower_components/ui-router/release/angular-ui-router.js',
+        'components/libs/*.js'
         ],
         destination: 'dist/js'
     },
     aplicationScripts: {
         source: [
         'app.js',
-        'components/libs/*.js',
         'signin/signin.controller.js',
         'signup/signup.controller.js',
         'home/home.controller.js',
-        'components/**/*.js'
+        'components/api_components/*.js',
+        'components/configuration.js'
         ],
         destination: 'dist/js'
     }

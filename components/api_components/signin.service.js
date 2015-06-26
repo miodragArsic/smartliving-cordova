@@ -4,9 +4,9 @@ angular.module('app')
 
 .factory('SignInService', SignInService);
 
-SignInService.$inject = ['SmartlivingAuthorization'];
+SignInService.$inject = ['SmartLivingAccount'];
 
-function SignInService(SmartLivingAuthorization) {
+function SignInService(SmartLivingAccount) {
 
     var service = {
         login: login,
@@ -18,12 +18,7 @@ function SignInService(SmartLivingAuthorization) {
     ////////////////////////////////
 
     function login(loginData) {
-        // var data = 'grant_type=password&username=' + encodeURIComponent(loginData.username) + '&password=' + encodeURIComponent(loginData.password) + '&client_id=' + clientId;
-
-        //       return $http.post(apiUrl + 'login', data, {
-        //           headers: headers
-        //       }).then(onSuccessfullLogin);
-        return SmartLivingAuthorization.login(loginData)
+        return SmartLivingAccount.login(loginData)
             .then(onSuccessfullLogin);
     }
 

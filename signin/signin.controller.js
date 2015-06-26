@@ -12,9 +12,9 @@ angular.module('app.signin', ['ngRoute'])
 
 .controller('SignInController', SignInController);
 
-SignInController.$inject = ['apiUrl', 'SignInService', '$location'];
+SignInController.$inject = ['SignInService', '$location'];
 
-function SignInController(apiUrl, SignInService, $location) {
+function SignInController(SignInService, $location) {
     var vm = this;
 
     vm.login = login;
@@ -32,10 +32,11 @@ function SignInController(apiUrl, SignInService, $location) {
 
             SignInService.login(vm.loginData)
                 .then(function(responseData) {
+                    window.localStorage.setItem('token', responseData.access_token);
                     $location.path('home');
                 })
                 .catch(function() {
-                    console.log('failed to login, failed');
+                    console.log('failed to login, something went wrong');
                 });
         }
 

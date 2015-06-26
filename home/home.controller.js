@@ -12,20 +12,33 @@ angular.module('app.home', ['ngRoute'])
 
 .controller('HomeController', HomeController);
 
-HomeController.$inject = ['$location'];
+HomeController.$inject = ['$location', 'UserService'];
 
-function HomeController($location) {
+function HomeController($location, UserService) {
     var vm = this;
 
     vm.homeText = 'I am home page!';
 
     vm.signout = signout;
+    vm.me = null;
 
     /////////////////////////////////////
 
-    
+
+    function activate() {
+
+        var token = window.localStorage.getItem('token');
+
+        UserService.me(token)
+        .then(function(responseData){
+            vm.me = responseData;
+        });
+    }
 
     function signout() {
         $location.path('signin');
     }
+
+    /////////////////////////////////////
+    activate();
 }
